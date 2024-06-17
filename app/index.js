@@ -10,27 +10,31 @@ import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { hp, wp } from "../helpers/common";
 import { theme } from "../constants/theme";
+import { useRouter } from "expo-router";
 
 const Home = () => {
+  const router = useRouter();
   return (
     <ImageBackground
       source={require("../assets/images/side-view-radio-microphone-with-copy-space.jpg")}
       style={styles.background}
     >
       <View style={styles.overlay}>
-        <View style={styles.logo}>
-          <Text style={styles.logoText}>BLOGD</Text>
-        </View>
-
         <View style={styles.content}>
           <Text style={styles.headingText}>
             Headlines and Tales at Your Fingertips
           </Text>
-          <TouchableOpacity style={styles.login}>
+          <TouchableOpacity
+            onPress={() => router.push("auth/login")}
+            style={styles.login}
+          >
             <Text style={styles.logintext}>CONTINUE</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.register}>
+          <TouchableOpacity
+            onPress={() => router.push("auth/create-account")}
+            style={styles.register}
+          >
             <Text style={styles.registerText}>Create an account.</Text>
           </TouchableOpacity>
         </View>
@@ -65,7 +69,7 @@ const styles = StyleSheet.create({
     borderTopStartRadius: 30,
     gap: 32,
     position: "absolute",
-    bottom: 50
+    bottom: 50,
   },
 
   logo: {
@@ -79,7 +83,7 @@ const styles = StyleSheet.create({
     color: theme.colors.white,
     fontSize: hp(4),
     fontWeight: theme.fontWeights.semibold,
-    textAlign: "center"
+    textAlign: "center",
   },
 
   login: {
@@ -108,9 +112,9 @@ const styles = StyleSheet.create({
 
   headingText: {
     color: theme.colors.white,
-    fontSize: 56,
+    fontSize: 52,
     fontWeight: "300",
     textAlign: "left",
-    marginBottom: 60
+    marginBottom: 60,
   },
 });
