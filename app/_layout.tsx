@@ -71,6 +71,13 @@ export default function RootLayout() {
           headerShown: false,
         }}
       />
+
+      <Stack.Screen
+        name="auth/verify-password-reset"
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack>
   );
 }
