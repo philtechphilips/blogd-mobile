@@ -87,7 +87,7 @@ const Login = () => {
                 color: theme.colors.primary,
               }}
             >
-              Forget password?
+              Forgot password?
             </Text>
           </Pressable>
           <TouchableOpacity

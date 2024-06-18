@@ -15,7 +15,7 @@ import { hp } from "../../helpers/common";
 import { theme } from "../../constants/theme";
 import { useRouter } from "expo-router";
 
-const ForgotPassword = () => {
+const ResetPassword = () => {
   const router = useRouter();
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -28,7 +28,7 @@ const ForgotPassword = () => {
           />
         </Pressable>
         <View>
-          <Text style={styles.headingText}>Forgot Password!</Text>
+          <Text style={styles.headingText}>Enter new Password!</Text>
           <Text
             style={{
               color: theme.colors.neutral(0.5),
@@ -36,7 +36,7 @@ const ForgotPassword = () => {
               fontSize: 16,
             }}
           >
-            Enter your e-mail address to get reset code
+            Enter your new password
           </Text>
         </View>
         <View style={styles.content}>
@@ -49,11 +49,29 @@ const ForgotPassword = () => {
                 fontWeight: "600",
               }}
             >
-              E-mail Address
+              New Password
             </Text>
             <TextInput
               style={styles.formInput}
-              placeholder="Enter your e-mail"
+              placeholder="Enter new password"
+              placeholderTextColor={theme.colors.neutral(0.5)}
+            />
+          </View>
+
+          <View>
+            <Text
+              style={{
+                fontSize: 16,
+                marginBottom: 10,
+                color: theme.colors.neutral(0.7),
+                fontWeight: "600",
+              }}
+            >
+              Confirm Password
+            </Text>
+            <TextInput
+              style={styles.formInput}
+              placeholder="Confirm new password"
               placeholderTextColor={theme.colors.neutral(0.5)}
             />
           </View>
@@ -62,7 +80,7 @@ const ForgotPassword = () => {
             onPress={() => router.push("auth/login")}
             style={styles.login}
           >
-            <Text style={styles.logintext}>Get reset code</Text>
+            <Text style={styles.logintext}>Update Password</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -72,7 +90,7 @@ const ForgotPassword = () => {
   );
 };
 
-export default ForgotPassword;
+export default ResetPassword;
 
 const styles = StyleSheet.create({
   container: {

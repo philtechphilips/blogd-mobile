@@ -14,9 +14,19 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { hp } from "../../helpers/common";
 import { theme } from "../../constants/theme";
 import { useRouter } from "expo-router";
+import OTPTextInput from "react-native-otp-textinput";
 
-const ForgotPassword = () => {
+const VerifyAccount = () => {
   const router = useRouter();
+
+  clearText = () => {
+    this.otpInput.clear();
+  };
+
+  setText = () => {
+    this.otpInput.setValue("1234");
+  };
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
@@ -28,7 +38,7 @@ const ForgotPassword = () => {
           />
         </Pressable>
         <View>
-          <Text style={styles.headingText}>Forgot Password!</Text>
+          <Text style={styles.headingText}>Verify Account!</Text>
           <Text
             style={{
               color: theme.colors.neutral(0.5),
@@ -36,7 +46,7 @@ const ForgotPassword = () => {
               fontSize: 16,
             }}
           >
-            Enter your e-mail address to get reset code
+            Enter your verfication code.
           </Text>
         </View>
         <View style={styles.content}>
@@ -49,20 +59,18 @@ const ForgotPassword = () => {
                 fontWeight: "600",
               }}
             >
-              E-mail Address
+              Verification Code
             </Text>
-            <TextInput
-              style={styles.formInput}
-              placeholder="Enter your e-mail"
-              placeholderTextColor={theme.colors.neutral(0.5)}
-            />
+            <View>
+              <OTPTextInput tintColor={theme.colors.primary} offTintColor={theme.colors.neutral(0.2)} ref={(e) => (this.otpInput = e)} />
+            </View>
           </View>
 
           <TouchableOpacity
             onPress={() => router.push("auth/login")}
             style={styles.login}
           >
-            <Text style={styles.logintext}>Get reset code</Text>
+            <Text style={styles.logintext}>Verify Account</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -72,7 +80,7 @@ const ForgotPassword = () => {
   );
 };
 
-export default ForgotPassword;
+export default VerifyAccount;
 
 const styles = StyleSheet.create({
   container: {
