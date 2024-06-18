@@ -14,11 +14,12 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { hp } from "../../helpers/common";
 import { theme } from "../../constants/theme";
 import { useRouter } from "expo-router";
+import SafeViewAndroid from "../../components/SafeAreaView";
 
 const ResetPassword = () => {
   const router = useRouter();
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={SafeViewAndroid.AndroidSafeArea}>
       <View style={styles.container}>
         <Pressable onPress={() => router.back()}>
           <Ionicons

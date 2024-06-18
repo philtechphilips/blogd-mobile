@@ -15,6 +15,7 @@ import { hp } from "../../helpers/common";
 import { theme } from "../../constants/theme";
 import { useRouter } from "expo-router";
 import OTPTextInput from "react-native-otp-textinput";
+import SafeViewAndroid from "../../components/SafeAreaView";
 
 const VerifyAccount = () => {
   const router = useRouter();
@@ -28,7 +29,7 @@ const VerifyAccount = () => {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={SafeViewAndroid.AndroidSafeArea}>
       <View style={styles.container}>
         <Pressable onPress={() => router.back()}>
           <Ionicons
@@ -62,7 +63,11 @@ const VerifyAccount = () => {
               Verification Code
             </Text>
             <View>
-              <OTPTextInput tintColor={theme.colors.primary} offTintColor={theme.colors.neutral(0.2)} ref={(e) => (this.otpInput = e)} />
+              <OTPTextInput
+                tintColor={theme.colors.primary}
+                offTintColor={theme.colors.neutral(0.2)}
+                ref={(e) => (this.otpInput = e)}
+              />
             </View>
           </View>
 

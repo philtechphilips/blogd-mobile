@@ -14,11 +14,12 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { hp } from "../../helpers/common";
 import { theme } from "../../constants/theme";
 import { useRouter } from "expo-router";
+import SafeViewAndroid from "../../components/SafeAreaView";
 
 const CreateAccount = () => {
   const router = useRouter();
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={SafeViewAndroid.AndroidSafeArea}>
       <View style={styles.container}>
         <Pressable onPress={() => router.back()}>
           <Ionicons
@@ -40,23 +41,23 @@ const CreateAccount = () => {
           </Text>
         </View>
         <View style={styles.content}>
-        <View>
-        <Text
-          style={{
-            fontSize: 16,
-            marginBottom: 10,
-            color: theme.colors.neutral(0.7),
-            fontWeight: "600",
-          }}
-        >
-          Full Name
-        </Text>
-        <TextInput
-          style={styles.formInput}
-          placeholder="Enter your full name"
-          placeholderTextColor={theme.colors.neutral(0.5)}
-        />
-      </View>
+          <View>
+            <Text
+              style={{
+                fontSize: 16,
+                marginBottom: 10,
+                color: theme.colors.neutral(0.7),
+                fontWeight: "600",
+              }}
+            >
+              Full Name
+            </Text>
+            <TextInput
+              style={styles.formInput}
+              placeholder="Enter your full name"
+              placeholderTextColor={theme.colors.neutral(0.5)}
+            />
+          </View>
 
           <View>
             <Text
