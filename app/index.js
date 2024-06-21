@@ -32,7 +32,7 @@ const Home = () => {
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={() => router.push("auth/reset-password")}
+            onPress={() => router.push("screens/home")}
             style={styles.register}
           >
             <Text style={styles.registerText}>Create an account.</Text>
