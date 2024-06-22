@@ -6,49 +6,55 @@ import { theme } from "../../constants/theme";
 import { hp } from "../../helpers/common";
 import TodaysList from "../../components/TodaysList";
 import { StatusBar } from "expo-status-bar";
+import Recommended from "../../components/Recommended";
 
 const Home = () => {
   return (
     <SafeAreaView style={SafeViewAndroid.AndroidSafeArea}>
       <View style={{ flex: 1, padding: 20 }}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
-          <Pressable
-            onPress={() => router.back()}
-            style={{
-              borderWidth: 1,
-              borderColor: theme.colors.neutral(0.2),
-              padding: 6,
-              borderRadius: 8,
-            }}
-          >
-            <Ionicons
-              name="notifications-outline"
-              size={24}
-              color={theme.colors.neutral(0.5)}
-            />
-          </Pressable>
-        </View>
-
-
         <View>
-          <Text style={{ color: theme.colors.neutral(0.5), fontWeight: "500" }}>
-            18 July 2024.
-          </Text>
-          <Text
-            style={{
-              color: theme.colors.neutral(0.8),
-              fontWeight: "500",
-              fontSize: hp(3.5),
-              marginTop: 4,
-            }}
-          >
-            Today Discover.
-          </Text>
+          <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
+            <Pressable
+              onPress={() => router.back()}
+              style={{
+                borderWidth: 1,
+                borderColor: theme.colors.neutral(0.2),
+                padding: 6,
+                borderRadius: 8,
+              }}
+            >
+              <Ionicons
+                name="notifications-outline"
+                size={24}
+                color={theme.colors.neutral(0.5)}
+              />
+            </Pressable>
+          </View>
+
+          <View>
+            <Text
+              style={{ color: theme.colors.neutral(0.5), fontWeight: "500" }}
+            >
+              18 July 2024.
+            </Text>
+            <Text
+              style={{
+                color: theme.colors.neutral(0.8),
+                fontWeight: "500",
+                fontSize: hp(3.5),
+                marginTop: 4,
+              }}
+            >
+              Today Discover.
+            </Text>
+          </View>
+
+          <TodaysList />
         </View>
 
-        <TodaysList />
+        <Recommended />
       </View>
-      <StatusBar style="dark-content"  />
+      <StatusBar style="dark-content" />
     </SafeAreaView>
   );
 };

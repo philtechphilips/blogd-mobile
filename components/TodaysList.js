@@ -96,8 +96,7 @@ export default TodaysList;
 
 const styles = StyleSheet.create({
   flatlistContainer: {
-    paddingHorizontal: 10,
-    gap: 8,
+    gap: 12,
   },
 
   imageWrapper: {
@@ -105,19 +104,19 @@ const styles = StyleSheet.create({
     width: wp(70),
     height: 400,
     borderRadius: 10,
-    overflow: "hidden", // Ensure the overlay respects the image border radius
+    overflow: "hidden", 
     zIndex: 10,
     elevation: 10,
   },
 
   image: {
-    height: "100%",
-    width: "100%",
+    width: wp(70), 
+    height: 400,
   },
 
   overlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: "rgba(0, 0, 0, 0.5)", // Adjusted opacity
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
     zIndex: 10,
     elevation: 10,
   },
@@ -130,7 +129,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: theme.colors.grayBG,
     borderRadius: 8,
-    padding: 10,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
     zIndex: 20,
     elevation: 20,
     marginLeft: 10,
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
 
   categoryText: {
     color: theme.colors.white,
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: theme.fontWeights.semibold,
   },
 

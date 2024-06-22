@@ -35,7 +35,7 @@ const TabsLayout = () => {
             backgroundColor: "#fff",
             borderTopWidth: 1,
             borderTopColor: "#efefef",
-            height: 84,
+            height: 80,
           },
         }}
       >
